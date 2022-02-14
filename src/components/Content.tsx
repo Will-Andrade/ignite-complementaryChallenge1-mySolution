@@ -23,8 +23,14 @@ export function Content({ genre, movies }: ContentComponentProps) {
 
         <main>
           <div className="movies-list">
-            {movies.map(movie => (
-              <MovieCard key ={movie.imdbID} title={movie.Title} poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value} />
+            {movies.map(({ imdbID, Title, Poster, Runtime, Ratings }) => (
+              <MovieCard 
+                key ={imdbID} 
+                title={Title} 
+                poster={Poster} 
+                runtime={Runtime} 
+                rating={Ratings[0].Value} 
+              />
             ))}
           </div>
         </main>

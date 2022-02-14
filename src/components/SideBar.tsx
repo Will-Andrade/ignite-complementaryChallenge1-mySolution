@@ -16,13 +16,13 @@ export function SideBar({ genreId, genres, handleGenreClick }: SideBarProps) {
     <span>Watch<p>Me</p></span>
 
     <div className="buttons-container">
-      {genres.map(genre => (
+      {genres.map(({ id, title, name }) => (
         <Button
-          key={String(genre.id)}
-          title={genre.title}
-          iconName={genre.name}
-          onClick={() => handleGenreClick(genre.id)}
-          selected={genreId === genre.id}
+          key={String(id)}
+          title={title}
+          iconName={name}
+          onClick={() => handleGenreClick(id)}
+          selected={genreId === id}
         />
       ))}
     </div>
