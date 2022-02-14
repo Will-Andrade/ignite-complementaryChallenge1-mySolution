@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { Container } from './components/Container';
 import { SideBar } from './components/SideBar';
 import { Content } from './components/Content';
 
@@ -57,10 +58,10 @@ export function App() {
 
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Container>
         <SideBar genres={genres} handleGenreClick={handleClickButton} genreId={selectedGenreId} />
         <Content genre={selectedGenre.title} movies={movies} />
-      </div>
+      </Container>
     </>
   )
 }
